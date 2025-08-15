@@ -3,138 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title> – سؤال وجواب | DolphinDev</title>
+  <title>سؤال وجواب – مسابقات عامة وألغاز وأمثال | DolphinDev</title>
 
-  <!-- وصف وكلمات مفتاحية -->
-  <meta name="description" content="مسابقاتي: تطبيق عربي ممتع للأسئلة والألغاز والأمثال الشعبية و عجلة الأسماء. حمله الآن مجانًا!" />
-  <meta name="keywords" content="مسابقات, أسئلة, ألغاز, أمثال, عجلة الأسماء, ألعاب عائلية, تطبيق عربي" />
+  <meta name="description" content="سؤال وجواب: تطبيق عربي ممتع للأسئلة العامة، الألغاز، والأمثال الشعبية مع وضع فردي وقروبات ولوحة متصدرين." />
+  <meta name="keywords" content="سؤال, جواب, مسابقات, أسئلة عامة, ألغاز, أمثال, لعبة جماعية, تحدي, عربية" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="سؤال وجواب" />
-  <meta property="og:description" content="تحديات وأسئلة وألغاز وأمثال وعجلة أسماء في تطبيق واحد!" />
+  <meta property="og:title" content="سؤال وجواب – مسابقات عامة وألغاز وأمثال" />
+  <meta property="og:description" content="تحديات وأسئلة وألغاز وأمثال في تطبيق واحد بواجهة عربية بسيطة." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sumayyh.github.io/" />
 
   <!-- iOS Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6748634816">
 
-  <!-- خط -->
+  <!-- Cairo Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --primary:#7DB178;
-      --dark:#0f172a;
-      --muted:#64748b;
-      --bg:#ffffff;
+      --primary:#7DB178; --dark:#0f172a; --muted:#64748b; --bg:#ffffff; --soft:#f1f5f9;
     }
     *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg);
-      color:var(--dark);
-      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    header{
-      padding:28px 20px;
-      border-bottom:1px solid #eee;
-    }
-    .container{max-width:980px; margin:0 auto; padding:0 20px;}
-    .brand{
-      display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;
-    }
-    .brand h1{margin:0; font-size:22px; font-weight:800}
-    main{padding:36px 0}
-    .hero{
-      display:grid; grid-template-columns:1fr; gap:20px; align-items:center;
-    }
-    .hero h2{font-size:30px; margin:0 0 10px; font-weight:800; line-height:1.2}
-    .hero p{color:var(--muted); margin:0 0 18px; font-size:18px}
-    .cta{
-      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
-    }
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      background:var(--primary); color:#fff; text-decoration:none;
-      padding:12px 18px; border-radius:10px; font-weight:800; font-size:16px;
-      transition:.2s transform ease;
-    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:"Cairo",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit}
+    .container{max-width:1040px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:var(--primary);display:inline-block}
+    .brand h1{margin:0;font-size:20px;font-weight:800}
+    .menu{display:flex;gap:18px}
+    .menu a{color:var(--muted);text-decoration:none;font-weight:700}
+    .menu a:hover{color:var(--dark)}
+
+    /* Hero */
+    .hero{padding:36px 0;display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:center}
+    .hero h2{margin:0 0 10px;font-size:34px;font-weight:800;line-height:1.25}
+    .hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:800;font-size:16px;transition:.2s transform ease, .2s opacity ease}
     .btn:hover{transform:translateY(-2px)}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .tag{background:#f1f5f9; color:#0f172a; padding:6px 10px; border-radius:999px; font-size:13px}
-    .features{
-      margin-top:40px; display:grid; gap:16px;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    }
-    .card{
-      border:1px solid #eee; border-radius:14px; padding:16px;
-    }
-    .card h3{margin:0 0 8px; font-size:18px; font-weight:800}
-    .card p{margin:0; color:var(--muted)}
-    footer{
-      margin-top:40px; padding:22px 0; border-top:1px solid #eee; color:var(--muted); font-size:14px;
-    }
-    .links{display:flex; gap:16px; flex-wrap:wrap}
-    .links a{color:var(--muted); text-decoration:none}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:var(--soft);color:var(--dark);padding:6px 10px;border-radius:999px;font-size:13px}
+    .mock{width:100%;border:1px solid #eee;border-radius:16px;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+    /* Features */
+    .features{padding:10px 0 30px}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{border:1px solid #eee;border-radius:14px;padding:16px}
+    .card h3{margin:0 0 8px;font-size:18px;font-weight:800}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Footer */
+    footer{border-top:1px solid #eee;margin-top:30px}
+    .foot{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 0;color:var(--muted);font-size:14px}
+    .links{display:flex;gap:16px;flex-wrap:wrap}
+    .links a{color:var(--muted);text-decoration:none}
     .links a:hover{text-decoration:underline}
+
+    /* Responsive */
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="container">
-      <a class="brand" href="https://sumayyh.github.io/">
-        <h1>مسابقاتي</h1>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>سؤال وجواب</h1>
       </a>
+      <nav class="menu" aria-label="روابط أساسية">
+        <a href="/">الرئيسية</a>
+        <a href="/support.html">الدعم</a>
+        <a href="/privacy.html">الخصوصية</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="hero">
-        <div>
-          <h2>لعب جماعي ممتع: أسئلة، ألغاز، أمثال، <span style="color:var(--primary)">وعجلة الأسماء!</span></h2>
-          <p>تجارب سريعة ومسلية للعائلة والأصدقاء: وضع فردي وقروبات، متصدرين، مؤثرات، وواجهة عربية بسيطة.</p>
-
-          <div class="cta">
-            <a class="btn" href="https://apps.apple.com/app/id6748634816" target="_blank" rel="noopener">
-              <span>حمّل من App Store</span>
-              🍏
-            </a>
-            <div class="tags">
-              <span class="tag">أسئلة عامة</span>
-              <span class="tag">ألغاز</span>
-              <span class="tag">أمثال شعبية</span>
-              <span class="tag">عجلة الأسماء</span>
-            </div>
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>مسابقات عامة، ألغاز، أمثال — <span style="color:var(--primary)">متعة في كل جولة!</span></h2>
+        <p>واجهة عربية بسيطة، وضع فردي أو قروبات، و<strong>لوحة متصدرين</strong> لحماس أكثر — مثالي للجلسات العائلية ولمّات الأصدقاء.</p>
+        <div class="cta">
+          <a class="btn" href="https://apps.apple.com/app/id6748634816" target="_blank" rel="noopener">
+            حمّل من App Store 🍏
+          </a>
+          <div class="tags" aria-label="وسوم الميزات">
+            <span class="tag">أسئلة عامة</span>
+            <span class="tag">ألغاز</span>
+            <span class="tag">أمثال شعبية</span>
+            <span class="tag">قروبات</span>
+            <span class="tag">متصدرون</span>
           </div>
         </div>
-      </section>
+      </div>
+      <div class="mock" aria-hidden="true">لقطة شاشة للتطبيق (اختيارية)</div>
+    </section>
 
-      <section class="features">
+    <!-- Features -->
+    <section class="features">
+      <div class="cards">
         <div class="card">
-          <h3>ألغاز وأمثال</h3>
-          <p>مستويات سهلة ومتوسطة، تعرض الإجابة بشكل أنيق، مع احتساب نقاط للمجموعة.</p>
+          <h3>أنماط متنوعة</h3>
+          <p>أسئلة عامة، ألغاز ذكية، وإكمال أمثال بطريقة مرحة.</p>
         </div>
         <div class="card">
-          <h3>عجلة الأسماء</h3>
-          <p>أضف الأسماء ولفّ العجلة لاختيار فائز عشوائي بواجهة ممتعة.</p>
+          <h3>لعب جماعي</h3>
+          <p>أدخل أسماء اللاعبين واستمتع بجولات سريعة وتنافسية.</p>
         </div>
         <div class="card">
           <h3>لوحة المتصدرين</h3>
-          <p>تجميع النقاط وحفظ النتائج محليًا على جهازك.</p>
+          <p>تسجيل النقاط محليًا على جهازك وعرض الأفضل أداءً.</p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div class="container" style="display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap;">
+    <div class="container foot">
       <div class="links">
-        <a href="https://sumayyh.github.io/privacy.html">سياسة الخصوصية</a>
-        <a href="https://sumayyh.github.io/support.html">الدعم والمساعدة</a>
+        <a href="/privacy.html">سياسة الخصوصية</a>
+        <a href="/support.html">الدعم والمساعدة</a>
       </div>
       <div>© 2025 DolphinDev</div>
     </div>
   </footer>
+
 </body>
 </html>

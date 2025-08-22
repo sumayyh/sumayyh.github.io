@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terms of Use — DolphinDev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand:#9fab86; --ink:#2f2f2f; --line:#d8d9d5; --paper:#fff; --bg:#f5f6f4; }
+    *{box-sizing:border-box}
+    body{font-family:"Cairo",sans-serif;background:var(--bg);margin:0;color:var(--ink)}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:20px}
+    .switch{display:flex;gap:8px;margin:10px 0 0 0; padding:0 20px}
+    .btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
+    .btn[aria-current="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .ar{display:none}
+    header{border-bottom:1px solid var(--line);background:#fff}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
+    .brand{font-size:24px;font-weight:900;color:var(--brand)}
+    .menu{display:flex;gap:16px;font-weight:700}
+    .menu a{color:var(--brand)}
+    .section{background:var(--paper);border:1px solid var(--line);padding:15px;margin:15px 0;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+    footer{margin-top:30px;padding:20px;border-top:1px solid var(--line);text-align:center;background:#fff;color:#444}
+    footer nav{margin-top:10px;display:flex;gap:15px;justify-content:center;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="switch">
+    <button id="btn-en" class="btn" aria-current="true">English</button>
+    <button id="btn-ar" class="btn">العربية</button>
+  </div>
+
+  <header>
+    <div class="nav">
+      <div class="brand">🐬 DolphinDev</div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:dolphindev2025@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- EN -->
+  <main class="en" lang="en" dir="ltr">
+    <div class="container">
+      <h1>Terms of Use</h1>
+      <div class="section"><h2>1. Intellectual Property</h2><p>All apps, code, and content belong to DolphinDev.</p></div>
+      <div class="section"><h2>2. Updates</h2><p>We may update features/services at any time. Continued use means acceptance.</p></div>
+      <div class="section"><h2>3. Connectivity</h2><p>Some features require internet. You are responsible for any data charges.</p></div>
+      <p>Contact: <a href="mailto:dolphindev2025@gmail.com">dolphindev2025@gmail.com</a></p>
+    </div>
+  </main>
+
+  <!-- AR -->
+  <main class="ar" lang="ar" dir="rtl">
+    <div class="container">
+      <h1>شروط الاستخدام</h1>
+      <div class="section"><h2>1. الحقوق الفكرية</h2><p>جميع التطبيقات والأكواد والمحتوى مملوكة لـ DolphinDev.</p></div>
+      <div class="section"><h2>2. التحديثات</h2><p>قد نُحدّث الميزات/الخدمات في أي وقت. استمرارك في الاستخدام يعني الموافقة.</p></div>
+      <div class="section"><h2>3. الاتصال</h2><p>بعض الميزات تحتاج الإنترنت. أنت مسؤول عن أي رسوم بيانات.</p></div>
+      <p>تواصل: <a href="mailto:dolphindev2025@gmail.com">dolphindev2025@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div style="font-size:20px;font-weight:800;color:#9fab86">🐬 <span style="font-weight:900">DolphinDev</span> 2025</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:dolphindev2025@gmail.com">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    const en=document.querySelector('.en'),ar=document.querySelector('.ar');
+    const bEn=document.getElementById('btn-en'),bAr=document.getElementById('btn-ar');
+    function show(lang){if(lang==='en'){en.style.display='block';ar.style.display='none';
+      bEn.setAttribute('aria-current','true');bAr.removeAttribute('aria-current');document.documentElement.lang='en';document.documentElement.dir='ltr';}
+      else{en.style.display='none';ar.style.display='block';
+      bAr.setAttribute('aria-current','true');bEn.removeAttribute('aria-current');document.documentElement.lang='ar';document.documentElement.dir='rtl';}}
+    bEn.onclick=()=>show('en'); bAr.onclick=()=>show('ar'); show('en');
+  </script>
+</body>
+</html>

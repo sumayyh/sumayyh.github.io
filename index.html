@@ -1,140 +1,126 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>سؤال وجواب – مسابقات عامة وألغاز وأمثال | DolphinDev</title>
-
-  <meta name="description" content="سؤال وجواب: تطبيق عربي ممتع للأسئلة العامة، الألغاز، والأمثال الشعبية مع وضع فردي وقروبات ولوحة متصدرين." />
-  <meta name="keywords" content="سؤال, جواب, مسابقات, أسئلة عامة, ألغاز, أمثال, لعبة جماعية, تحدي, عربية" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="سؤال وجواب – مسابقات عامة وألغاز وأمثال" />
-  <meta property="og:description" content="تحديات وأسئلة وألغاز وأمثال في تطبيق واحد بواجهة عربية بسيطة." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sumayyh.github.io/" />
-
-  <!-- iOS Smart App Banner -->
-  <meta name="apple-itunes-app" content="app-id=6748634816">
-
-  <!-- Cairo Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DolphinDev — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --primary:#7DB178; --dark:#0f172a; --muted:#64748b; --bg:#ffffff; --soft:#f1f5f9;
-    }
+    :root { --brand:#9fab86; --ink:#2f2f2f; --line:#d8d9d5; --paper:#fff; --bg:#f5f6f4; }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:"Cairo",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit}
-    .container{max-width:1040px;margin:0 auto;padding:0 20px}
+    body{font-family:"Cairo",sans-serif;background:var(--bg);margin:0;color:var(--ink)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:20px}
+
+    /* Lang switch */
+    .switch{display:flex;gap:8px;margin:10px 0 0 0; padding:0 20px}
+    .btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
+    .btn[aria-current="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .ar{display:none}
 
     /* Header */
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .brand .logo{width:36px;height:36px;border-radius:10px;background:var(--primary);display:inline-block}
-    .brand h1{margin:0;font-size:20px;font-weight:800}
-    .menu{display:flex;gap:18px}
-    .menu a{color:var(--muted);text-decoration:none;font-weight:700}
-    .menu a:hover{color:var(--dark)}
+    header{border-bottom:1px solid var(--line);background:#fff}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
+    .brand{font-size:24px;font-weight:900;color:var(--brand)}
+    .menu{display:flex;gap:16px;font-weight:700}
+    .menu a{color:var(--brand);text-decoration:none}
 
-    /* Hero */
-    .hero{padding:36px 0;display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:center}
-    .hero h2{margin:0 0 10px;font-size:34px;font-weight:800;line-height:1.25}
-    .hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
-    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:800;font-size:16px;transition:.2s transform ease, .2s opacity ease}
-    .btn:hover{transform:translateY(-2px)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .tag{background:var(--soft);color:var(--dark);padding:6px 10px;border-radius:999px;font-size:13px}
-    .mock{width:100%;border:1px solid #eee;border-radius:16px;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    /* Hero / Logo-like title */
+    .hero{padding:24px 0 0}
+    .logo-big{font-size:36px;font-weight:900;color:var(--brand);display:flex;align-items:center;gap:8px}
+    .sub{margin:6px 0 0;color:#555}
 
-    /* Features */
-    .features{padding:10px 0 30px}
-    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .card{border:1px solid #eee;border-radius:14px;padding:16px}
-    .card h3{margin:0 0 8px;font-size:18px;font-weight:800}
-    .card p{margin:0;color:var(--muted)}
-
-    /* Footer */
-    footer{border-top:1px solid #eee;margin-top:30px}
-    .foot{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 0;color:var(--muted);font-size:14px}
-    .links{display:flex;gap:16px;flex-wrap:wrap}
-    .links a{color:var(--muted);text-decoration:none}
-    .links a:hover{text-decoration:underline}
-
-    /* Responsive */
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+    /* App buttons */
+    .apps{display:grid;gap:14px;margin:18px 0}
+    .app-btn{
+      display:block;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+      padding:14px 16px;font-weight:800;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .12s ease;
+    }
+    .app-btn:hover{transform:translateY(-2px)}
+    footer{margin-top:30px;padding:20px;border-top:1px solid var(--line);text-align:center;background:#fff;color:#444}
+    footer nav{margin-top:10px;display:flex;gap:15px;justify-content:center;font-weight:700}
   </style>
 </head>
 <body>
+  <!-- Language -->
+  <div class="switch" role="tablist" aria-label="Language">
+    <button id="btn-en" class="btn" aria-current="true">English</button>
+    <button id="btn-ar" class="btn">العربية</button>
+  </div>
 
   <!-- Header -->
   <header>
-    <div class="container nav">
-      <a class="brand" href="/">
-        <span class="logo" aria-hidden="true"></span>
-        <h1>سؤال وجواب</h1>
-      </a>
-      <nav class="menu" aria-label="روابط أساسية">
-        <a href="/">الرئيسية</a>
-        <a href="/support.html">الدعم</a>
-        <a href="/privacy.html">الخصوصية</a>
+    <div class="nav">
+      <div class="brand">🐬 DolphinDev</div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:dolphindev2025@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h2>مسابقات عامة، ألغاز، أمثال — <span style="color:var(--primary)">متعة في كل جولة!</span></h2>
-        <p>واجهة عربية بسيطة، وضع فردي أو قروبات، و<strong>لوحة متصدرين</strong> لحماس أكثر — مثالي للجلسات العائلية ولمّات الأصدقاء.</p>
-        <div class="cta">
-          <a class="btn" href="https://apps.apple.com/app/id6748634816" target="_blank" rel="noopener">
-            حمّل من App Store 🍏
-          </a>
-          <div class="tags" aria-label="وسوم الميزات">
-            <span class="tag">أسئلة عامة</span>
-            <span class="tag">ألغاز</span>
-            <span class="tag">أمثال شعبية</span>
-            <span class="tag">قروبات</span>
-            <span class="tag">متصدرون</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- EN -->
+  <main class="en" lang="en" dir="ltr">
+    <div class="container">
+      <section class="hero">
+        <div class="logo-big">🐬 DolphinDev</div>
+        <p class="sub">We build simple, delightful iOS apps.</p>
+      </section>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="cards">
-        <div class="card">
-          <h3>أنماط متنوعة</h3>
-          <p>أسئلة عامة، ألغاز ذكية، وإكمال أمثال بطريقة مرحة.</p>
+      <section>
+        <h2>Apps</h2>
+        <div class="apps">
+          <a class="app-btn" href="soal-jawab.html">Q&A (Trivia)</a>
+          <a class="app-btn" href="dolphincode.html">DolphinCode — Live Code Preview</a>
         </div>
-        <div class="card">
-          <h3>لعب جماعي</h3>
-          <p>أدخل أسماء اللاعبين واستمتع بجولات سريعة وتنافسية.</p>
+      </section>
+
+      <p>Contact us: <a href="mailto:dolphindev2025@gmail.com">dolphindev2025@gmail.com</a></p>
+    </div>
+  </main>
+
+  <!-- AR -->
+  <main class="ar" lang="ar" dir="rtl">
+    <div class="container">
+      <section class="hero">
+        <div class="logo-big">🐬 DolphinDev</div>
+        <p class="sub">نُطوّر تطبيقات iOS بسيطة وممتعة.</p>
+      </section>
+
+      <section>
+        <h2>التطبيقات</h2>
+        <div class="apps">
+          <a class="app-btn" href="apps/soal-jawab.html">سؤال وجواب</a>
+          <a class="app-btn" href="apps/dolphincode.html">DolphinCode — معاينة كود مباشرة</a>
         </div>
-        <div class="card">
-          <h3>لوحة المتصدرين</h3>
-          <p>تسجيل النقاط محليًا على جهازك وعرض الأفضل أداءً.</p>
-        </div>
-      </div>
-    </section>
+      </section>
+
+      <p>تواصل معنا: <a href="mailto:dolphindev2025@gmail.com">dolphindev2025@gmail.com</a></p>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <div class="container foot">
-      <div class="links">
-        <a href="/privacy.html">سياسة الخصوصية</a>
-        <a href="/support.html">الدعم والمساعدة</a>
-      </div>
-      <div>© 2025 DolphinDev</div>
-    </div>
+    <div style="font-size:20px;font-weight:800;color:#9fab86">🐬 <span style="font-weight:900">DolphinDev</span> 2025</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:dolphindev2025@gmail.com">Contact</a>
+    </nav>
   </footer>
 
+  <script>
+    const en=document.querySelector('.en'),ar=document.querySelector('.ar');
+    const bEn=document.getElementById('btn-en'),bAr=document.getElementById('btn-ar');
+    function show(lang){if(lang==='en'){en.style.display='block';ar.style.display='none';
+      bEn.setAttribute('aria-current','true');bAr.removeAttribute('aria-current');document.documentElement.lang='en';document.documentElement.dir='ltr';}
+      else{en.style.display='none';ar.style.display='block';
+      bAr.setAttribute('aria-current','true');bEn.removeAttribute('aria-current');document.documentElement.lang='ar';document.documentElement.dir='rtl';}}
+    bEn.onclick=()=>show('en'); bAr.onclick=()=>show('ar'); show('en');
+  </script>
 </body>
 </html>
